@@ -1,268 +1,95 @@
 ---
-title: 'BioHackEU23 report: Template for the very long title'
-title_short: 'BioHackEU23 #26: unknown chemical substances'
+title: 'BioHackEU26 report for Project 10: Enabling workflows and EDAM annotations to display in community website deployments'
+title_short: 'BioHackEU26 #10: workflows and EDAM for ETT'
 tags:
-  - cheminformatics
-  - PubChem
-  - unknown chemical substances
+  - computational workflows
+  - WorkflowHub
+  - EDAM
+  - ontology
+  - ELIXIR Toolkit Theme
 authors:
-  - name: First Author
+  - name: 
+    affiliation: 
+    role: 
+  - name: 
+    affiliation: 
+    role: 
+  - name: Ove Johan Ragnar Gustafsson
+    orcid: 0000-0002-2977-5032
     affiliation: 1
-    role: Writing – original draft
-  - name: Last Author
-    orcid: 0000-0000-0000-0000
-    affiliation: 2
-    role: Conceptualization, Writing – review & editing
+    role: Conceptualization, writing – original draft
+  - name: 
+    affiliation: 
+    role: 
 affiliations:
-  - name: First Affiliation
+  - name: 
+    index: 
+  - name: 
+    index: 
+  - name: Australian BioCommons, University of Melbourne, Melbourne, Victoria, Australia
     index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
-    index: 2
-date: 8 November 2023
+  - name: 
+    index:  
+date: 11 November 2026
 cito-bibliography: paper.bib
-event: BH23EU
-biohackathon_name: "BioHackathon Europe 2023"
+event: BH26EU
+biohackathon_name: "BioHackathon Europe 2026"
 biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
+biohackathon_location: "Barcelona, Spain, 2026"
+group: Project 10
 # URL to project git repo --- should contain the actual paper.md:
-git_url: https://github.com/biohackrxiv/publication-template
+git_url: https://github.com/supernord/biohackathon-2026-project-10
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
 authors_short: First Author \emph{et al.}
 ---
 
 
+**Note:** Please keep sections to a maximum of only two levels.
+
+
 # Introduction
 
-As part of the BioHackathon Europe 2023, we here report...
+Project abstract from BioHackathon:
 
-## Meeting information
+The ELIXIR Toolkit Theme (ETT, <https://elixir-belgium.github.io/elixir-toolkit-theme/>) enables communities to deploy websites via GitHub, facilitating broad contributions and collaborations, and streamlining the process of building and populating the site. The popularity of the ETT is demonstrated by numerous deployments, including RDMkit, RSQkit, and WorkflowHub [@citesAsAuthority:gustafsson2025workflowhub] documentation. These deployments can also centralise sharing of digital resources such as workflows intended for reuse by communities. This use case requires a streamlined way to find, view, and understand workflows, in the context of an ETT deployed website.
 
-If you want to submit a preprint to BioHackrXiv, first check if your meeting is registered. You can find a list
-of meetings [here](https://index.biohackrxiv.org/meetings). If your meeting is missing, please contact your meeting
-organizers. The above list also provides information on the YAML fields with information about the meeting.
+Whilst ETT already offers the possibility of annotating pages with identifiers from FAIRsharing and bio.tools [@citesAsAuthority:mendes2026bio], support for workflows and ontologies is not implemented. This project will extend the ETT to enable 1) automation of workflow imports from WorkflowHub, 2) creation of interactive tables to present the communities workflows, and 3) automated addition of EDAM ontology annotations at both the workflow table and webpage (i.e. schema.org) level. The latter will build on the existing integration with bio.tools, offer the possibility of manual curation, and increase the findability of these webpages. Moreover, ontology terms (e.g. EDAM) are already used to annotate the bio.tools elements already included on many ETT instances, including RDMkit.
 
-The following fields need to be given:
+Workflow developers from any community can thus continue using WorkflowHub to make their workflows FAIR, and community coordinators can independently and automatically import these to an ETT deployment along with EDAM annotations. This support would be beneficial for increasing the findability of the pages and enabling better integration across multiple instances of ETT.
 
-```YAML
-biohackathon_name: "BioHackathon Europe 2023"
-biohackathon_url:   "https://biohackathon-europe.org/"
-biohackathon_location: "Barcelona, Spain, 2023"
-group: Project 26
-git_url: https://github.com/yourOrganization/your_report_repo
-```
-
-The [BioHackrXiv meeting pages](https://index.biohackrxiv.org/meetings) provide content to use for the first
-three fields. The `git_url:` field must have the link to the GitHub repository with your preprint (draft).
-
-## Author information
-
-Information about the authors is given in the [YAML](https://en.wikipedia.org/wiki/YAML) format at the top of this template.
-For authors you provide their names, their affiliations. That is the minimum, but as BioHackrXiv is moving to a situation
-where more metadata is shared, and used by, for example, EuropePMC, adding additional information ie encouraged.
-
-BioHackathons is about hacking together, and the minimal number of authors for reports is two. This makes a minimal example
-look like this:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-  - name: Last Author
-    affiliation: 2
-affiliations:
-  - name: First Affiliation
-    index: 1
-  - name: ELIXIR Europe
-    index: 2
-```
-
-### Author identifiers
-
-Ideally, authors provide their [ORCID](https://orcid.org/) identifier. For affiliations, It is added with the `orcid:` field.
-So, and author record would look like this:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    orcid: 0000-0000-0000-0000
-```
-
-### Research Organization Registry identifiers
-
-Matching the author identifier, the affiliations can be further specified with the
-[Research Organization Registry](https://ror.org/) (ROR) identifier.
-For example, this is the affiliation identifier can be added with the `ror:` field:
-
-```yaml
-affiliations:
-  - name: ELIXIR Europe
-    ror: 044rwnt51
-    index: 2
-```
-
-### Contributor Role Taxonomy
-
-A last feature since is minimal support for the Contributor Role Taxonomy (CRediT). You
-can specify the role of authors in writing the report with the `role:` field. However,
-the authors are responsible for selection the right terms from [CRediT](https://credit.niso.org/).
-An example looks like this:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    orcid: 0000-0000-0000-0000
-    role: Conceptualization, Writing – review & editing
-```
-
-### A full examples
-
-A full example then has this structure:
-
-```yaml
-authors:
-  - name: First Author
-    affiliation: 1
-    role: Writing – original draft
-  - name: Last Author
-    orcid: 0000-0000-0000-0000
-    affiliation: 2
-    role: Conceptualization, Writing – review & editing
-affiliations:
-  - name: First Affiliation
-    index: 1
-  - name: ELIXIR Europe
-    ror: 044rwnt51
-    index: 2
-```
-
-# Formatting
-
-This document use Markdown and you can look at [this tutorial](https://www.markdowntutorial.com/).
-
-## Subsection level 2
-
-Please keep sections to a maximum of only two levels.
-
-## Tables
-
-Tables can be added in the following way, though alternatives are possible:
-
-```markdown
-Table: Note that table caption is automatically numbered and should be
-given before the table itself.
-
-| Header 1 | Header 2 |
-| -------- | -------- |
-| item 1 | item 2 |
-| item 3 | item 4 |
-```
-
-This gives:
-
-Table: Note that table caption is automatically numbered and should be
-given before the table itself.
-
-| Header 1 | Header 2 |
-| -------- | -------- |
-| item 1 | item 2 |
-| item 3 | item 4 |
-
-## Figures
-
-A figure is added with:
-
-```markdown
-![Caption for BioHackrXiv logo figure](./biohackrxiv.png)
-```
-
-This gives:
-
-![Caption for BioHackrXiv logo figure \label{figureCode}](./biohackrxiv.png)
-
-Figures can be scaled by adding the width or height to the Markdown like this:
-
-```markdown
-![Caption for BioHackrXiv logo figure](./biohackrxiv.png){ width=50px }
-```
-
-You can add cross references to figures by adding a LaTeX `\label{figureCode}` to
-the label of the Markdown figure and then use `\ref{figureCode}` to cite it:
-
-```markdown
-![Caption for BioHackrXiv logo figure \label{figureCode}](./biohackrxiv.png){ width=50px }
-```
-
-This way, we can cite Figure \ref{figureCode}.
-
-## Mermaid graphs
-
-[Mermaid](https://mermaid.js.org/) provides a solution to put diagrams in Markdown. BioHackrXiv
-added support for this in 2026. This is an example of embedding a graph:
-
-```mermaid
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-
-# Other main section on your manuscript level 1
-
-Lists can be added with:
-
-1. Item 1
-2. Item 2
-
-# Citation Typing Ontology annotation
-
-You can use [CiTO](http://purl.org/spar/cito/2018-02-12) annotations, as explained in [this BioHackathon Europe 2021 write up](https://raw.githubusercontent.com/biohackrxiv/bhxiv-metadata/main/doc/elixir_biohackathon2021/paper.md) and [this CiTO Pilot](https://www.biomedcentral.com/collections/cito).
-Using this template, you can cite an article and indicate _why_ you cite that article, for instance DisGeNET-RDF [@citesAsAuthority:Queralt2016].
-
-The syntax in Markdown is as follows: a single intention annotation looks like
-`[@usesMethodIn:Krewinkel2017]`; two or more intentions are separated
-with colons, like `[@extends:discusses:Nielsen2017Scholia]`. When you cite two
-different articles, you use this syntax: `[@citesAsDataSource:Ammar2022ETL; @citesAsDataSource:Arend2022BioHackEU22]`.
-
-Possible CiTO typing annotation include:
-
-* citesAsDataSource: when you point the reader to a source of data which may explain a claim
-* usesDataFrom: when you reuse somehow (and elaborate on) the data in the cited entity
-* usesMethodIn
-* citesAsAuthority
-* citesAsEvidence
-* citesAsPotentialSolution
-* citesAsRecommendedReading
-* citesAsRelated
-* citesAsSourceDocument
-* citesForInformation
-* confirms
-* documents
-* providesDataFor
-* obtainsSupportFrom
-* discusses
-* extends
-* agreesWith
-* disagreesWith
-* updates
-
-There is a general `cites` intention, but this is already implied and should be left out.
 
 # Results
+
+## Project goals
+
+1. Translate a proof of concept integration with the WorkflowHub API to the ELIXIR Toolkit Theme, including GitHub actions, configs, htmls, and css.
+2. Enable support for annotation with ontology terms on ETT, including import of ontology annotations from bio.tools based on existing annotations of pages.
+3. Create working examples, including documentation, that can be included on the ETT test deployment page: e.g. https://elixir-belgium.github.io/elixir-toolkit-theme/all_trainings 
+
+
+## WorkflowHub import
+
+Use case driver
+https://australian-structural-biology-computing.github.io/index
+
+Idea for table include https://australianbiocommons.github.io/workflowfinder/
+
+Source collection on WorkflowHub: https://workflowhub.eu/collections/40 
+
+
+## EDAM annotations
 
 
 # Discussion
 
-...
+
 
 ## Acknowledgements
 
-...
+The authors acknowledge all the organisers and participants at the ELIXIR BioHackathon Europe 2026 in Barcelona, Spain, for helping make this project a success.
+
+This work is supported by Australian BioCommons, which is enabled by NCRIS via Bioplatforms Australia funding.
 
 # References
 
