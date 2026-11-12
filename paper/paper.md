@@ -8,9 +8,9 @@ tags:
   - ontology
   - ELIXIR Toolkit Theme
 authors:
-  - name: 
-    affiliation: 
-    role: 
+  - name: Federico Bianchini
+    affiliation: 3
+    role: Conceptualization, Supervision, Writing – original draft, Visualization
   - name: 
     affiliation: 
     role: 
@@ -22,8 +22,8 @@ authors:
     affiliation: 
     role: 
 affiliations:
-  - name: 
-    index: 
+  - name: Department of Biosciences, University of Oslo, Norway
+    index: 3
   - name: 
     index: 
   - name: Australian BioCommons, University of Melbourne, Melbourne, Victoria, Australia
