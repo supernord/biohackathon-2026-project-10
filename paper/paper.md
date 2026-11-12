@@ -7,6 +7,7 @@ tags:
   - EDAM
   - ontology
   - ELIXIR Toolkit Theme
+  - JSON ld
 authors:
   - name: 
     affiliation: 
@@ -56,9 +57,9 @@ The [ELIXIR Toolkit Theme (ETT)](https://elixir-belgium.github.io/elixir-toolkit
 
 Crucially, these websites often centralise the sharing of digital resources that can be reused by specific communities. For example, the [Australian Structural Biology Computing (ASBC) Community](https://australian-structural-biology-computing.github.io/index) maintains an ETT website as a shared space: the intention is for the community to be able to find activities, resources, news, and events, as well as how to join the community conversation [@citesAsAuthority:michie2025roadmap]. In this context, *resources* refers to any digital object that supports the requirements of the community, including, but not limited to, software tools and workflows. 
 
-Including these resources in an ETT website currently requires manual curation, which is time consuming for ETT website maintainers and does not directly support making the software and workflows findable, accessible, interoperable, and reusable (FAIR) [@citesAsAuthority:barker2022introducing,wilkinson2025applying]. The ideal approach would be to use the existing FAIR infrastructure ecosystem to register software and workflows, enable the ETT to interoperate with this ecosystem, and then automatically populate a website with the relevant software or workflows. This approach leverages the registries to both curate and make resources FAIR, shares the curation burden across the contributing communities, and provides the opportunity to simultaneously add ontology annotations from registry entries to ETT websites.
+Including these resources in an ETT website currently requires manual curation, which is time-consuming for ETT website maintainers and does not directly support making the software and workflows findable, accessible, interoperable, and reusable (FAIR) [@citesAsAuthority:barker2022introducing,wilkinson2025applying]. The ideal approach would be to use the existing FAIR infrastructure ecosystem to register software and workflows, enable the ETT to interoperate with this ecosystem, and then automatically populate a website with the relevant software or workflows. This approach leverages the registries to both curate and make resources FAIR, shares the curation burden across the contributing communities, and provides the opportunity to simultaneously add ontology annotations from registry entries to ETT websites.
 
-The ETT already offers the possibility of annotating pages with identifiers from registries like [FAIRsharing](https://fairsharing.org/) [@citesAsAuthority:sansone2019fairsharing] and [bio.tools](https://bio.tools/) [@citesAsAuthority:mendes2026bio]. However, support for workflows and ontologies is not implemented. This project thus worked to extend the ETT and enable creation of interactive tables to present workflows, and automation of workflow metadata import from WorkflowHub, as well as extension of the ETT integration with bio.tools to support EDAM ontology annotations at both the workflow table and ETT webpage (i.e. schema.org) level.
+The ETT already offers the possibility of annotating pages with identifiers from registries like [FAIRsharing](https://fairsharing.org/) [@citesAsAuthority:sansone2019fairsharing] and [bio.tools](https://bio.tools/) [@citesAsAuthority:mendes2026bio]. However, support for workflows and ontologies is not implemented. This project thus worked to extend the ETT and enable the creation of interactive tables to present workflows, and automation of workflow metadata import from WorkflowHub, as well as extension of the ETT integration with bio.tools to support EDAM ontology annotations at both the workflow table and ETT webpage (i.e. schema.org) level.
 
 Ultimately, developers from any community can continue using bio.tools and WorkflowHub to make their software FAIR, and community coordinators can independently and automatically import and embed these in an ETT deployment, benefitting from both the registry entry and its rich EDAM concept annotations. When implemented for the ETT, these features will increase the findability of the website pages and enable better integration across multiple community instances of the ETT.
 
@@ -69,7 +70,7 @@ Ultimately, developers from any community can continue using bio.tools and Workf
 
 The BioHackathon project had the following goals:
 
-1. Enable interactive workflow tables for the ETT, by implementing a proof of concept integration between a community website and the WorkflowHub API.
+1. Enable interactive workflow tables for the ETT by implementing a proof-of-concept integration between a community website and the WorkflowHub API.
 2. Enable support for annotation with ontology terms on ETT, including import of ontology annotations from bio.tools based on existing annotations of pages.
 3. Create working examples, including documentation, that can be included on the [ETT test deployment page](https://elixir-belgium.github.io/elixir-toolkit-theme/all_trainings). 
 
@@ -84,6 +85,11 @@ Source collection on WorkflowHub: https://workflowhub.eu/collections/40
 
 ## EDAM annotations
 
+ETT stores information about various tools and resources (the latter being a rather broad category including standards and repositories). 
+This information is recorded in a [centralised YAML file](https://elixir-belgium.github.io/elixir-toolkit-theme/resource_table#the-main-yaml-file); the content of the said file is distributed across the pages in tabular form, and the individual tools and resources are highlighted in the text using a specific icon. Please refer to this [documentation page](https://elixir-belgium.github.io/elixir-toolkit-theme/resource_table#adding-new-tools) for additional information. This table supports four distinct registries for each resource: bio.tools, FAIRsharing, TeSS, and Europe PCM. These attributes store values that can be easily converted to the specific identifiers supported by each of these resources (or specific queries in some cases) and can, thus, enable programmatic access to the API of these resources, which would allow for the retrieval of additional information. In this project, the aim is to leverage this feature to obtain the EDAM annotations for all tools mentioned on an instance of ETT: the existing bio.tools URI are used to make dedicated API calls, from which the EDAM identifiers are obtained. These are in turn used to fetch the related EDAM label from BioPortal. The label/URI pair is then stored in the central YAML file as a key/value pair, under a dedicated attribute called _keywords_.
+
+Another central point of this project is to encapsulate the relevant information from the central YAML file into standardised JSON-LD form, 
+following a structure compliant with [Schema.org](https://schema.org/). 
 
 # Discussion
 
