@@ -45,14 +45,16 @@ authors_short: First Author \emph{et al.}
 ---
 
 
-**Note:** Please keep sections to a maximum of only two levels.
+> **Note:** Please keep sections to a maximum of only two levels.
 
 
 # Introduction
 
-Project abstract from BioHackathon:
+> Modified and extended project abstract from BioHackathon 2026:
 
-The ELIXIR Toolkit Theme (ETT, <https://elixir-belgium.github.io/elixir-toolkit-theme/>) enables communities to deploy websites via GitHub, facilitating broad contributions and collaborations, and streamlining the process of building and populating the site. The popularity of the ETT is demonstrated by numerous deployments, including RDMkit, RSQkit, and WorkflowHub [@citesAsAuthority:gustafsson2025workflowhub] documentation. These deployments can also centralise sharing of digital resources such as workflows intended for reuse by communities. This use case requires a streamlined way to find, view, and understand workflows, in the context of an ETT deployed website.
+The [ELIXIR Toolkit Theme (ETT)](https://elixir-belgium.github.io/elixir-toolkit-theme/) enables diverse research and infrastructure communities to easily deploy static websites using a GitHub repository. This is beneficial as it facilitates broad and open contributions and collaborations, provides version control and development flexibility, and streamlines the process of building and populating a website. The popularity of the lightweight and standardised ETT model is demonstrated by [numerous deployments](https://elixir-belgium.github.io/elixir-toolkit-theme/#this-theme-is-known-to-be-used-in), including [RDMkit](https://rdmkit.elixir-europe.org/) [@citesAsAuthority:Alper_RDMkit_A_Research_2025], [RSQkit](https://everse.software/RSQKit/) [@citesAsAuthority:rsqkit_community_2025_14923573], and [WorkflowHub documentation](https://about.workflowhub.eu/) [@citesAsAuthority:gustafsson2025workflowhub].
+
+Crucially, these websites often centralise the sharing of digital resources that can be reused by specific communities. For example, the [Australian Structural Biology Computing (ASBC) Community](https://australian-structural-biology-computing.github.io/index) maintains an ETT website as a shared space: the intention is for the community to be able to find activities, resources, news, and events, as well as how to join the community conversation [@citesAsAuthority:michie2025roadmap]. In this context, *resources* refers to any digital object that supports the requirements of the community, including, but not limited to, software tools and workflows. 
 
 Whilst ETT already offers the possibility of annotating pages with identifiers from FAIRsharing and bio.tools [@citesAsAuthority:mendes2026bio], support for workflows and ontologies is not implemented. This project will extend the ETT to enable 1) automation of workflow imports from WorkflowHub, 2) creation of interactive tables to present the communities workflows, and 3) automated addition of EDAM ontology annotations at both the workflow table and webpage (i.e. schema.org) level. The latter will build on the existing integration with bio.tools, offer the possibility of manual curation, and increase the findability of these webpages. Moreover, ontology terms (e.g. EDAM) are already used to annotate the bio.tools elements already included on many ETT instances, including RDMkit.
 
@@ -69,9 +71,6 @@ Workflow developers from any community can thus continue using WorkflowHub to ma
 
 
 ## WorkflowHub import
-
-Use case driver
-https://australian-structural-biology-computing.github.io/index
 
 Idea for table include https://australianbiocommons.github.io/workflowfinder/
 
