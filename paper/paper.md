@@ -18,9 +18,10 @@ authors:
     orcid: 0000-0002-2977-5032
     affiliation: 1
     role: Conceptualization, writing – original draft
-  - name: 
-    affiliation: 
-    role: 
+  - name: Danielle Welter
+    orcid: 0000-0003-1058-2668
+    affiliation: 2
+    role: Data curation, Writing – review & editing
 affiliations:
   - name: Department of Biosciences, University of Oslo, Norway
     index: 3
@@ -28,8 +29,8 @@ affiliations:
     index: 
   - name: Australian BioCommons, University of Melbourne, Melbourne, Victoria, Australia
     index: 1
-  - name: 
-    index:  
+  - name: Luxembourg National Data Service, Esch-sur-Alzette, Luxembourg
+    index: 2 
 date: 11 November 2026
 cito-bibliography: paper.bib
 event: BH26EU
